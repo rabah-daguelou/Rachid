@@ -44,7 +44,7 @@
     },
     methods: {
         login () {
-    
+            localStorage.setItem('token', 'my token')
             this.$router.push('admin')
         }
     }

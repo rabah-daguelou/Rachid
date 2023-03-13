@@ -64,10 +64,10 @@ const router = createRouter({
 })
 
 // Protection des routes Admin
-
 router.beforeEach((to, from, next)=> {
+ 
   console.log('from:', from.path); 
-  console.log('to:', to);
+  console.log('to:', to.path);
   if (to.path.match('/admin')) {
     authGuard()
   }
