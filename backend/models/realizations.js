@@ -13,6 +13,10 @@ const Realization = DB.define('Realization', {
         type: DataTypes.INTEGER(10),
         allowNull: false,
     },
+    user_pseudo: { // Pseudo de l'utilisateur publicateur
+        type: DataTypes.STRING(100),
+        allowNull: false,
+    },
 
     realization_name: { // Nom de la réalisation
         type: DataTypes.STRING(100),
@@ -58,5 +62,9 @@ const Realization = DB.define('Realization', {
     }
 }, { paranoid: true }) // Soft delete
 
+// Synchronisation du modèle realization
+Realization.sync()
+//Realization.sync({ force: true})
+//Realization.sync({ alter: true})
 
 module.exports = Realization;

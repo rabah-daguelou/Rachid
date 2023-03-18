@@ -10,12 +10,12 @@ const User = DB.define('User', {
         autoIncrement: true
     },
     
-    pseudo: {
+    user_pseudo: {
         type: DataTypes.STRING(100),
         unique: true,
     },
 
-    email: {
+    user_email: {
         type: DataTypes.STRING,
         unique:true,
         validate: {
@@ -23,11 +23,16 @@ const User = DB.define('User', {
         }
     },
 
-    password: {
+    user_password: {
         type: DataTypes.STRING(64),
         is: /^[0-9a-f](64)$/i // contrainte
     }
 }, { paranoid: true }) // Soft delete
 
+// Synchronisation du modèle
+
+ //User.sync();
+ //User.sync({ force: true});
+// User.sync( { alter: true});
 
 module.exports = User;

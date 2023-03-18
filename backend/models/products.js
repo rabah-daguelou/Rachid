@@ -10,11 +10,14 @@ const Product = DB.define('Product', {
         primaryKey: true,
         autoIncrement: true
     },
-    user_id: { // L'utilisateur publicateur
+    user_id: { // Id de L'utilisateur publicateur
         type: DataTypes.INTEGER(10),
         allowNull: false,
     },
-
+    user_pseudo: { // Pseudo de l'utilisateur publicateur
+        type: DataTypes.STRING(100),
+        allowNull: false,
+    },
     product_name: { // Nom du produit
         type: DataTypes.STRING(100),
         defaultValue: '',
@@ -59,5 +62,8 @@ const Product = DB.define('Product', {
     }
 }, { paranoid: true }) // Soft delete
 
+//Product.sync()
+//Product.sync({ force: true})
+//Product.sync({ alter: true})
 
 module.exports = Product;

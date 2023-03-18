@@ -12,6 +12,7 @@ let sequelize = new Sequelize(
 )
 
 // Synchronisation des modèles
-sequelize.sync()
+
+// sequelize.sync(err => console.log ("Erreur de synchronisation avec la BDD:", err))
 
 module.exports= sequelize

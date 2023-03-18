@@ -47,5 +47,9 @@ const Client = DB.define('Client', {
     
 }, { paranoid: true }) // Soft delete
 
+// Synchroniser le modèle client
+// Client.sync()
+// Client.sync({ alter: true })
+// Client.sync({ force: true })
 
 module.exports = Client;
